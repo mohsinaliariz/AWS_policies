@@ -1,0 +1,23 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowReadtouser",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::<AccountID>:user/<userID>"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::<Bucket_name>/*"
+        },
+        {
+            "Sid": "AllowReadWrite",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": "arn:aws:iam::627884144765:user/<userID>"
+            },
+            "Action": "s3:*",
+            "Resource": "arn:aws:s3:::<Bucket_name>/*"
+        }
+    ]
+}
